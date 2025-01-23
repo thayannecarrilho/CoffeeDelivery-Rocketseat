@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { CartContext } from '../../contexto/CartContext';
+import { CartContext } from '../../contexts/CartContext';
 import {
   CartContainer,
   Image,
@@ -13,6 +13,7 @@ import {
   QuantityButton,
   QuantityDisplay,
 } from './styles';
+import { Minus, Plus, ShoppingCart } from 'phosphor-react';
 
 interface ProductCartProps {
   id: number;
@@ -52,11 +53,11 @@ export default function ProductCart({ id, name, description, price, imageUrl, ta
           R$ <strong>{price.toFixed(2)}</strong>
         </Price>
         <QuantityControls>
-          <QuantityButton onClick={handleDecreaseQuantity}>-</QuantityButton>
+          <QuantityButton onClick={handleDecreaseQuantity}><Minus/></QuantityButton>
           <QuantityDisplay>{quantity}</QuantityDisplay>
-          <QuantityButton onClick={handleIncreaseQuantity}>+</QuantityButton>
+          <QuantityButton onClick={handleIncreaseQuantity}><Plus/></QuantityButton>
         </QuantityControls>
-        <AddToCartButton onClick={handleAddToCart}>🛒</AddToCartButton>
+        <AddToCartButton onClick={handleAddToCart}><ShoppingCart/></AddToCartButton>
       </Footer>
     </CartContainer>
   );

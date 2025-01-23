@@ -32,9 +32,24 @@ export const Controls = styled.div`
   margin-top: 0.5rem;
 `;
 
+export const QuantityControls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: ${props => props.theme.button};
+  border-radius: 8px;
+  padding: 0.5rem;
+`;
+
+export const QuantityDisplay = styled.span`
+  font-size: 1rem;
+  color: ${props => props.theme.title};
+`;
+
 export const QuantityButton = styled.button`
-  background: #8047f8;
-  color: white;
+  color: ${props => props.theme.purple};
+  font-weight: bold;
+  background: none;
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
@@ -45,17 +60,23 @@ export const QuantityButton = styled.button`
 export const Quantity = styled.span`
   font-size: 1rem;
   font-weight: bold;
+  color: ${props => props.theme.purpleDark};
 `;
 
 export const RemoveButton = styled.button`
   background: transparent;
-  color: #8047f8;
+  color: ${props => props.theme.purpleDark};
   border: none;
   display: flex;
   align-items: center;
   gap: 0.25rem;
   cursor: pointer;
   font-size: 0.875rem;
+  font-weight: bold;
+
+  &:hover {
+    color: red;
+  }
 `;
 
 export const Price = styled.span`

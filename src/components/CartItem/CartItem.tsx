@@ -1,14 +1,25 @@
-import { Trash } from 'phosphor-react'; // Ajuste conforme biblioteca de ícones
+import { Plus, Minus, Trash } from 'phosphor-react';
 import { useContext } from 'react';
-import { CartContext } from '../../contexto/CartContext';
-import { CartItemContainer, Image, Details, Name, Controls, QuantityButton, RemoveButton, Price, Quantity } from './styles'
+import { CartContext } from '../../contexts/CartContext';
+import {
+  CartItemContainer,
+  Image,
+  Details,
+  Name,
+  Controls,
+  QuantityControls,
+  QuantityDisplay,
+  QuantityButton,
+  RemoveButton,
+  Price
+} from './styles';
 
 interface CartItemProps {
   item: {
     id: number;
     name: string;
     price: number;
-    imageUrl: string;
+    imageUrl?: string;
     quantity: number;
   };
 }
@@ -36,9 +47,11 @@ export function CartItem({ item }: CartItemProps) {
       <Details>
         <Name>{item.name}</Name>
         <Controls>
-          <QuantityButton onClick={handleDecreaseQuantity}>-</QuantityButton>
-          <Quantity>{item.quantity}</Quantity>
-          <QuantityButton onClick={handleIncreaseQuantity}>+</QuantityButton>
+          <QuantityControls>
+            <QuantityButton onClick={handleDecreaseQuantity}><Minus /></QuantityButton>
+            <QuantityDisplay>{item.quantity}</QuantityDisplay>
+            <QuantityButton onClick={handleIncreaseQuantity}><Plus /></QuantityButton>
+          </QuantityControls>
           <RemoveButton onClick={handleRemoveItem}>
             <Trash size={16} /> Remover
           </RemoveButton>
