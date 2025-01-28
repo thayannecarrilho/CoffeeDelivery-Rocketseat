@@ -5,6 +5,7 @@ import { ShoppingCart, MapPin } from 'phosphor-react';
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 
+
 export default function Header() {
   const { cartItems } = useContext(CartContext);
   const cartItemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
@@ -25,6 +26,7 @@ export default function Header() {
             {cartItemCount > 0 && <span>{cartItemCount}</span>}
           </HeaderCart>
         </Link>
+       
       </HeaderRight>
     </HeaderContainer>
   );

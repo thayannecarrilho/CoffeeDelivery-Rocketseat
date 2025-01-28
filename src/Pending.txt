@@ -1,0 +1,12 @@
+Pendências:
+
+
+- Criar hooks próprios para as funções de Incrementar e Decrementar (Botões - +) e outras tbm...
+- Mandar dados para um pedido.json com pedido e endereço (id, createdAt, etc)
+- Utilizar o ContextSelector para melhorar a performace 
+- Fazer pagina de pedidos feitos e colocar botoes de pendente, concluido. 
+
+
+✔ Reduzir código do card, reproduzir ele apenas em um componente (CartItem-Cart e ProductCart-Home) utilizando o data.json
+✔ ImageUrl bug na page Cart
+✔ Incluir um Dialog no projeto

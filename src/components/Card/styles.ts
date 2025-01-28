@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const CartContainer = styled.div`
+export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,7 +99,7 @@ export const QuantityDisplay = styled.span`
 `
 
 export const AddToCartButton = styled.button`
-  background: ${props => props.theme.purpleDark};
+  background: ${props => props.theme.purple};
   color: ${props => props.theme.card};
   border: none;
   border-radius: 8px;
@@ -112,6 +112,6 @@ export const AddToCartButton = styled.button`
   transition: background 0.2s;
 
   &:hover {
-    background: ${props => props.theme.purple};
+    background: ${props => props.theme.purpleDark};
   }
 `

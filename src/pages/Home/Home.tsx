@@ -1,5 +1,5 @@
 import Header from '../../components/Header/Header'
-import ProductCart from '../../components/ProductCart/ProductCart'
+import Card from '../../components/Card/Card'
 import {
   HomeContainer,
   IntroContainer,
@@ -16,12 +16,14 @@ import {
 import CoffeeImage from '../../assets/Copo.png'
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 import 'styled-components'
-import { products } from '../../assets/imagePaths'
+import { products } from '../../../products'
+import { ModalCart } from '../../components/ModalCart/ModalCart'
 
 export default function Home() {
   return (
     <>
       <Header />
+      <ModalCart />
       <HomeContainer>
         <IntroContainer>
           <IntroContent>
@@ -58,7 +60,7 @@ export default function Home() {
         <h1>Nossos cafés</h1>
         <ProductsGrid>
           {products.map((product) => (
-            <ProductCart
+            <Card
               key={product.id}
               id={product.id}
               name={product.name}
